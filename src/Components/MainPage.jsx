@@ -7,10 +7,12 @@ import {
     setDataFetchDue,
     setDataFetchTre,
     setStringsToShowOnPlayer,
+    setAddSongPreferite,
+    setRemoveSongPreferite,
 } from "../redux/reducers/stateSliceReducer";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
-import { Heart } from "react-bootstrap-icons";
+import { Heart, HeartFill } from "react-bootstrap-icons";
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
@@ -28,7 +30,9 @@ const MainPage = () => {
     const datiSecondaFetch = useSelector((state) => state.FetchAlMount.dataFetchDue);
     const datiterzaFetch = useSelector((state) => state.FetchAlMount.dataFetchTre);
     const datiFetchInput = useSelector((state) => state.FetchAlMount.dataFetchInput);
+    const IDsongPreferite = useSelector((state) => state.FetchAlMount.songPreferite);
     console.log("DATIFETCH", datiPrimaFetch, datiSecondaFetch, datiterzaFetch, datiFetchInput);
+    console.log("IDsongPreferite", IDsongPreferite);
 
     useEffect(() => {
         dispatch(fetchData(url, "eminem", options, setDataFetchUno));
@@ -171,8 +175,22 @@ const MainPage = () => {
                                                         <Card.Text className=" m-0">
                                                             Canzone: {singleAlbum.title_short}
                                                         </Card.Text>
-                                                    </Card.Body>
-                                                    <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
+                                                    </Card.Body>{" "}
+                                                    {IDsongPreferite.includes(singleAlbum.id) ? (
+                                                        <HeartFill
+                                                            onClick={() => {
+                                                                dispatch(setRemoveSongPreferite(singleAlbum.id));
+                                                            }}
+                                                            className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                        />
+                                                    ) : (
+                                                        <Heart
+                                                            onClick={() => {
+                                                                dispatch(setAddSongPreferite(singleAlbum.id));
+                                                            }}
+                                                            className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                        />
+                                                    )}
                                                 </Card>
                                             </Col>
                                         ))}

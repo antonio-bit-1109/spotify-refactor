@@ -8,6 +8,7 @@ const MainSlice = createSlice({
         dataFetchTre: null,
         dataFetchInput: null,
         dataToShowOnMusicPlayer: null,
+        songPreferite: [],
     },
 
     /* QUESTE SONO LE ACTION  ACTIONS = I MIEI SETTER DI GONI SINGOLO STATO  */
@@ -21,17 +22,29 @@ const MainSlice = createSlice({
         setDataFetchTre: (state, action) => {
             state.dataFetchTre = action.payload;
         },
-
         setDataFetchInput: (state, action) => {
             state.dataFetchInput = action.payload;
         },
-
         setStringsToShowOnPlayer: (state, action) => {
             state.dataToShowOnMusicPlayer = action.payload;
+        },
+        setAddSongPreferite: (state, action) => {
+            state.songPreferite.push(action.payload);
+        },
+
+        setRemoveSongPreferite: (state, actions) => {
+            state.songPreferite = state.songPreferite.filter((id) => id !== actions.payload);
         },
     },
 });
 
-export const { setDataFetchUno, setDataFetchDue, setDataFetchTre, setDataFetchInput, setStringsToShowOnPlayer } =
-    MainSlice.actions;
+export const {
+    setDataFetchUno,
+    setDataFetchDue,
+    setDataFetchTre,
+    setDataFetchInput,
+    setStringsToShowOnPlayer,
+    setAddSongPreferite,
+    setRemoveSongPreferite,
+} = MainSlice.actions;
 export default MainSlice.reducer;
