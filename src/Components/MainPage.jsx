@@ -9,8 +9,8 @@ import {
     setStringsToShowOnPlayer,
 } from "../redux/reducers/stateSliceReducer";
 import { useSelector, useDispatch } from "react-redux";
-
 import Card from "react-bootstrap/Card";
+import { Heart } from "react-bootstrap-icons";
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
@@ -73,7 +73,7 @@ const MainPage = () => {
                                                                 onClick={() => {
                                                                     dispatch(setStringsToShowOnPlayer(singleAlbum));
                                                                 }}
-                                                                className="m-2 h-100 bg-transparent border-0"
+                                                                className="m-2 h-100 bg-transparent border-0 position-relative"
                                                             >
                                                                 <Card.Img variant="top" src={singleAlbum.album.cover} />
                                                                 <Card.Body className=" d-flex flex-column justify-content-start">
@@ -84,6 +84,7 @@ const MainPage = () => {
                                                                         Canzone: {singleAlbum.title_short}
                                                                     </Card.Text>
                                                                 </Card.Body>
+                                                                <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
                                                             </Card>
                                                         </Col>
                                                     ))}
@@ -103,7 +104,7 @@ const MainPage = () => {
                                                     onClick={() => {
                                                         dispatch(setStringsToShowOnPlayer(singleAlbum));
                                                     }}
-                                                    className="m-2 h-100 bg-transparent border-0"
+                                                    className="m-2 h-100 bg-transparent border-0 position-relative"
                                                 >
                                                     <Card.Img variant="top" src={singleAlbum.album.cover} />
                                                     <Card.Body className=" d-flex flex-column justify-content-start">
@@ -114,6 +115,7 @@ const MainPage = () => {
                                                             Canzone: {singleAlbum.title_short}
                                                         </Card.Text>
                                                     </Card.Body>
+                                                    <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
                                                 </Card>
                                             </Col>
                                         ))}
@@ -130,7 +132,7 @@ const MainPage = () => {
                                                     onClick={() => {
                                                         dispatch(setStringsToShowOnPlayer(singleAlbum));
                                                     }}
-                                                    className="m-2 h-100 bg-transparent border-0"
+                                                    className="m-2 h-100 bg-transparent border-0 position-relative"
                                                 >
                                                     <Card.Img variant="top" src={singleAlbum.album.cover} />
                                                     <Card.Body className="bg-transparent">
@@ -141,6 +143,7 @@ const MainPage = () => {
                                                             Canzone: {singleAlbum.title_short}
                                                         </Card.Text>
                                                     </Card.Body>
+                                                    <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
                                                 </Card>
                                             </Col>
                                         ))}
@@ -158,7 +161,7 @@ const MainPage = () => {
                                                     onClick={() => {
                                                         dispatch(setStringsToShowOnPlayer(singleAlbum));
                                                     }}
-                                                    className="m-2 h-100 bg-transparent border-0"
+                                                    className="m-2 h-100 bg-transparent border-0 position-relative"
                                                 >
                                                     <Card.Img variant="top" src={singleAlbum.album.cover} />
                                                     <Card.Body className="bg-transparent">
@@ -169,6 +172,7 @@ const MainPage = () => {
                                                             Canzone: {singleAlbum.title_short}
                                                         </Card.Text>
                                                     </Card.Body>
+                                                    <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
                                                 </Card>
                                             </Col>
                                         ))}
