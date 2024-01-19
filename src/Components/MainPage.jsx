@@ -5,6 +5,8 @@ import { fetchData } from "../redux/functions/fetchFile";
 import { setDataFetchUno, setDataFetchDue, setDataFetchTre } from "../redux/reducers/stateSliceReducer";
 import { useSelector, useDispatch } from "react-redux";
 
+import Card from "react-bootstrap/Card";
+
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 const options = {
@@ -17,60 +19,112 @@ const options = {
 
 const MainPage = () => {
     const dispatch = useDispatch();
+    const datiPrimaFetch = useSelector((state) => state.FetchAlMount.dataFetchUno);
+    const datiSecondaFetch = useSelector((state) => state.FetchAlMount.dataFetchDue);
+    const datiterzaFetch = useSelector((state) => state.FetchAlMount.dataFetchTre);
+    console.log("DATIFETCH", datiPrimaFetch, datiSecondaFetch, datiterzaFetch);
 
     useEffect(() => {
         dispatch(fetchData(url, "eminem", options, setDataFetchUno));
         dispatch(fetchData(url, "caparezza", options, setDataFetchDue));
-        dispatch(fetchData(url, "rancore", options, setDataFetchTre));
+        dispatch(fetchData(url, "subnautica", options, setDataFetchTre));
     }, []);
 
     return (
         <>
-            <Col xs={12} md={9} className=" offset-md-3 mainPage">
-                <div>
-                    <Row>
-                        <Col xs={9} lg={11} className=" mainLinks d-none d-md-flex">
-                            <a href="#">TRENDING</a>
-                            <a href="#">PODCAST</a>
-                            <a href="#">MOODS AND GENRES</a>
-                            <a href="#">NEW RELEASES</a>
-                            <a href="#">DISCOVER</a>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={10}>
-                            <div id="searchResults" style={{ display: "none" }}>
-                                <h2>Search Results</h2>
-                                <Row className="imgLinks py-3" xs={1} sm={2} lg={3} xl={4}></Row>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={10} id="rock">
-                            <h2>Rock music</h2>
-                            <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3" id="rockSection"></Row>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={10} id="pop">
-                            <h2>Pop Culture</h2>
-                            <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3" id="popSection"></Row>
-                        </Col>
-                    </Row>
+            {" "}
+            {datiPrimaFetch && datiSecondaFetch && datiterzaFetch && (
+                <>
+                    {" "}
+                    <Col xs={12} md={9} className=" offset-md-3 mainPage">
+                        <div>
+                            <Row>
+                                <Col xs={9} lg={11} className=" mainLinks d-none d-md-flex">
+                                    <a href="#">TRENDING</a>
+                                    <a href="#">PODCAST</a>
+                                    <a href="#">MOODS AND GENRES</a>
+                                    <a href="#">NEW RELEASES</a>
+                                    <a href="#">DISCOVER</a>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={10}>
+                                    <div id="searchResults" style={{ display: "none" }}>
+                                        <h2>Search Results</h2>
+                                        <Row className="imgLinks py-3" xs={1} sm={2} lg={3} xl={4}></Row>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={10} id="rock">
+                                    <h2>Rock music</h2>
+                                    <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3" id="rockSection">
+                                        {datiPrimaFetch.data.slice(0, 4).map((singleAlbum) => (
+                                            <Col key={singleAlbum.id}>
+                                                <Card className="m-2 h-100 bg-transparent border-0">
+                                                    <Card.Img variant="top" src={singleAlbum.album.cover} />
+                                                    <Card.Body className=" d-flex flex-column justify-content-start">
+                                                        <Card.Text className=" m-0">
+                                                            {singleAlbum.album.title}
+                                                        </Card.Text>
+                                                        <Card.Text className=" m-0">
+                                                            {singleAlbum.title_short}
+                                                        </Card.Text>
+                                                    </Card.Body>
+                                                </Card>
+                                            </Col>
+                                        ))}
+                                    </Row>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col xs={10} id="pop">
+                                    <h2>Pop Culture</h2>
+                                    <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3" id="rockSection">
+                                        {datiSecondaFetch.data.slice(0, 4).map((singleAlbum) => (
+                                            <Col key={singleAlbum.id}>
+                                                <Card className="m-2 h-100 bg-transparent border-0">
+                                                    <Card.Img variant="top" src={singleAlbum.album.cover} />
+                                                    <Card.Body className="bg-transparent">
+                                                        <Card.Text className=" m-0">
+                                                            {singleAlbum.album.title}
+                                                        </Card.Text>
+                                                        <Card.Text className="m-0">{singleAlbum.title_short}</Card.Text>
+                                                    </Card.Body>
+                                                </Card>
+                                            </Col>
+                                        ))}
+                                    </Row>
+                                </Col>
+                            </Row>
 
+                            <Row>
+                                <Col xs={10} id="hiphop">
+                                    <h2>#HipHop</h2>
+                                    <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3" id="rockSection">
+                                        {datiterzaFetch.data.slice(0, 4).map((singleAlbum) => (
+                                            <Col key={singleAlbum.id} className="mb-7">
+                                                <Card className="m-2 h-100 bg-transparent border-0">
+                                                    <Card.Img variant="top" src={singleAlbum.album.cover} />
+                                                    <Card.Body className="bg-transparent">
+                                                        <Card.Text className=" m-0">
+                                                            {singleAlbum.album.title}
+                                                        </Card.Text>
+                                                        <Card.Text className="m-0">{singleAlbum.title_short}</Card.Text>
+                                                    </Card.Body>
+                                                </Card>
+                                            </Col>
+                                        ))}
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Col>
                     <Row>
-                        <Col xs={10} id="hiphop">
-                            <h2>#HipHop</h2>
-                            <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3" id="hipHopSection"></Row>
-                        </Col>
+                        <MusicPlayer />
                     </Row>
-                </div>
-            </Col>
-            {/* LETTORE MUSICALE  */}
-            <Row>
-                <MusicPlayer />
-            </Row>
-            {/* LETTORE MUSICALE  */}
+                </>
+            )}
         </>
     );
 };

@@ -168,10 +168,10 @@ ul {
     margin-bottom: 7rem;
 }
 
-.mainPage img {
-    width: 200px;
-}
-
 .icon {
     width: 20px !important;
+}
+
+.mb-7 {
+    margin-bottom: 5rem !important;
 }
