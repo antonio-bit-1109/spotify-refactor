@@ -44,6 +44,7 @@ const MainPage = () => {
                     </Row>
                 </div>
             </Col>
+            <Row></Row>
         </>
     );
 };
