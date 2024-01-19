@@ -175,3 +175,7 @@ ul {
 .mb-7 {
     margin-bottom: 5rem !important;
 }
+
+.no-underline {
+    text-decoration: none;
+}

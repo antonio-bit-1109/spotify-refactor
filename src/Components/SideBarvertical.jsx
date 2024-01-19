@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Form, InputGroup, Nav, Navbar } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
 import { BookFill, HouseAddFill } from "react-bootstrap-icons";
 import { fetchData } from "../redux/functions/fetchFile";
+import { useSelector, useDispatch } from "react-redux";
+import { setDataFetchInput } from "../redux/reducers/stateSliceReducer";
+import { Link } from "react-router-dom";
+
+const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
+const options = {
+    method: "GET",
+    headers: {
+        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+        "X-RapidAPI-Key": "9d408f0366mshab3b0fd8e5ecdf7p1b09f2jsne682a1797fa0",
+    },
+};
 
 const SideBarvertical = () => {
+    const dispatch = useDispatch();
+
+    const [inputValue, setInputValue] = useState("");
+    console.log(inputValue);
+
     const searchHandler = (event) => {
         event.preventDefault();
-        // Add your search logic here
+        dispatch(fetchData(url, inputValue, options, setDataFetchInput));
     };
 
     return (
@@ -50,6 +68,8 @@ const SideBarvertical = () => {
                                                 placeholder="Search"
                                                 aria-label="Search"
                                                 aria-describedby="basic-addon2"
+                                                onChange={(event) => setInputValue(event.target.value)}
+                                                value={inputValue}
                                             />
 
                                             <Button variant="outline-secondary" type="submit">

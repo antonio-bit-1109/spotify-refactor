@@ -22,7 +22,8 @@ const MainPage = () => {
     const datiPrimaFetch = useSelector((state) => state.FetchAlMount.dataFetchUno);
     const datiSecondaFetch = useSelector((state) => state.FetchAlMount.dataFetchDue);
     const datiterzaFetch = useSelector((state) => state.FetchAlMount.dataFetchTre);
-    console.log("DATIFETCH", datiPrimaFetch, datiSecondaFetch, datiterzaFetch);
+    const datiFetchInput = useSelector((state) => state.FetchAlMount.dataFetchInput);
+    console.log("DATIFETCH", datiPrimaFetch, datiSecondaFetch, datiterzaFetch, datiFetchInput);
 
     useEffect(() => {
         dispatch(fetchData(url, "eminem", options, setDataFetchUno));
@@ -49,9 +50,36 @@ const MainPage = () => {
                             </Row>
                             <Row>
                                 <Col xs={10}>
-                                    <div id="searchResults" style={{ display: "none" }}>
-                                        <h2>Search Results</h2>
-                                        <Row className="imgLinks py-3" xs={1} sm={2} lg={3} xl={4}></Row>
+                                    <div id="searchResults">
+                                        {datiFetchInput && (
+                                            <>
+                                                <h2>Search Results</h2>
+                                                <Row
+                                                    xs={1}
+                                                    sm={2}
+                                                    lg={3}
+                                                    xl={4}
+                                                    className="imgLinks py-3"
+                                                    id="rockSection"
+                                                >
+                                                    {datiFetchInput.data.slice(0, 20).map((singleAlbum) => (
+                                                        <Col key={singleAlbum.id}>
+                                                            <Card className="m-2 h-100 bg-transparent border-0">
+                                                                <Card.Img variant="top" src={singleAlbum.album.cover} />
+                                                                <Card.Body className=" d-flex flex-column justify-content-start">
+                                                                    <Card.Text className=" m-0">
+                                                                        {singleAlbum.album.title}
+                                                                    </Card.Text>
+                                                                    <Card.Text className=" m-0">
+                                                                        {singleAlbum.title_short}
+                                                                    </Card.Text>
+                                                                </Card.Body>
+                                                            </Card>
+                                                        </Col>
+                                                    ))}
+                                                </Row>
+                                            </>
+                                        )}
                                     </div>
                                 </Col>
                             </Row>
