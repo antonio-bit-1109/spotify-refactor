@@ -8,7 +8,7 @@ const MainSlice = createSlice({
         dataFetchTre: null,
         dataFetchInput: null,
         dataToShowOnMusicPlayer: null,
-        songPreferite: [],
+        songPreferite: [] /* only ID's */,
     },
 
     /* QUESTE SONO LE ACTION  ACTIONS = I MIEI SETTER DI GONI SINGOLO STATO  */
