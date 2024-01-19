@@ -45,9 +45,11 @@ const MainPage = () => {
                     </Row>
                 </div>
             </Col>
+            {/* LETTORE MUSICALE  */}
             <Row>
                 <MusicPlayer />
             </Row>
+            {/* LETTORE MUSICALE  */}
         </>
     );
 };
