@@ -18,68 +18,66 @@ const MainComponent = () => {
                 <Row>
                     {/* START sidebar-verticale */}
                     <Col sx={2}>
-                        <div>
-                            <Navbar expand="md" className="fixed-left justify-content-between" id="sidebar">
-                                <div className="container flex-column align-items-start">
-                                    <a className="navbar-brand" href="index.html">
-                                        <img src={Logo} alt="Spotify Logo" width="131" height="40" />
-                                    </a>
-                                    <Button
-                                        className="navbar-toggler"
-                                        type="button"
-                                        data-toggle="collapse"
-                                        data-target="#navbarNavAltMarkup"
-                                        aria-controls="navbarNavAltMarkup"
-                                        aria-expanded="false"
-                                        aria-label="Toggle navigation"
-                                    >
-                                        <span className="navbar-toggler-icon"></span>
-                                    </Button>
-                                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                                        <div className="navbar-nav">
-                                            <ul>
-                                                <li>
-                                                    <a className="nav-item nav-link d-flex align-items-center" href="#">
-                                                        <i className="bi bi-house-door-fill"></i>&nbsp; Home
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a className="nav-item nav-link d-flex align-items-center" href="#">
-                                                        <i className="bi bi-book-fill"></i>&nbsp; Your Library
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <Form onSubmit={searchHandler} className="input-group mt-3">
-                                                        <InputGroup>
-                                                            <Form.Control
-                                                                type="text"
-                                                                id="searchField"
-                                                                placeholder="Search"
-                                                                aria-label="Search"
-                                                                aria-describedby="basic-addon2"
-                                                            />
+                        <Navbar expand="md" className="fixed-left justify-content-between" id="sidebar">
+                            <div className="container flex-column align-items-start">
+                                <a className="navbar-brand" href="index.html">
+                                    <img src={Logo} alt="Spotify Logo" width="131" height="40" />
+                                </a>
+                                <Button
+                                    className="navbar-toggler"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#navbarNavAltMarkup"
+                                    aria-controls="navbarNavAltMarkup"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation"
+                                >
+                                    <span className="navbar-toggler-icon"></span>
+                                </Button>
+                                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                    <div className="navbar-nav">
+                                        <ul>
+                                            <li>
+                                                <a className="nav-item nav-link d-flex align-items-center" href="#">
+                                                    <i className="bi bi-house-door-fill"></i>&nbsp; Home
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a className="nav-item nav-link d-flex align-items-center" href="#">
+                                                    <i className="bi bi-book-fill"></i>&nbsp; Your Library
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <Form onSubmit={searchHandler} className="input-group mt-3">
+                                                    <InputGroup>
+                                                        <Form.Control
+                                                            type="text"
+                                                            id="searchField"
+                                                            placeholder="Search"
+                                                            aria-label="Search"
+                                                            aria-describedby="basic-addon2"
+                                                        />
 
-                                                            <Button variant="outline-secondary" type="submit">
-                                                                GO
-                                                            </Button>
-                                                        </InputGroup>
-                                                    </Form>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                                        <Button variant="outline-secondary" type="submit">
+                                                            GO
+                                                        </Button>
+                                                    </InputGroup>
+                                                </Form>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div className="nav-btn">
-                                    <Button className="btn signup-btn" variant="primary">
-                                        Sign Up
-                                    </Button>
-                                    <Button className="btn login-btn" variant="success">
-                                        Login
-                                    </Button>
-                                    <Nav.Link href="#">Cookie Policy</Nav.Link> |<Nav.Link href="#">Privacy</Nav.Link>
-                                </div>
-                            </Navbar>
-                        </div>
+                            </div>
+                            <div className="nav-btn">
+                                <Button className="btn signup-btn" variant="primary">
+                                    Sign Up
+                                </Button>
+                                <Button className="btn login-btn" variant="success">
+                                    Login
+                                </Button>
+                                <Nav.Link href="#">Cookie Policy</Nav.Link> |<Nav.Link href="#">Privacy</Nav.Link>
+                            </div>
+                        </Navbar>
                     </Col>
                     {/* END sidebar-verticale */}
 
