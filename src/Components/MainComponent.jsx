@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Logo from "../assets/logo/logo.png";
 import { Button, Form, InputGroup } from "react-bootstrap";
 import { Navbar, Nav, FormControl } from "react-bootstrap";
+import { HouseAddFill, BookFill } from "react-bootstrap-icons";
 
 const MainComponent = () => {
     const searchHandler = (event) => {
@@ -36,35 +37,39 @@ const MainComponent = () => {
                                 </Button>
                                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                                     <div className="navbar-nav">
-                                        <ul>
-                                            <li>
-                                                <a className="nav-item nav-link d-flex align-items-center" href="#">
-                                                    <i className="bi bi-house-door-fill"></i>&nbsp; Home
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a className="nav-item nav-link d-flex align-items-center" href="#">
-                                                    <i className="bi bi-book-fill"></i>&nbsp; Your Library
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <Form onSubmit={searchHandler} className="input-group mt-3">
-                                                    <InputGroup>
-                                                        <Form.Control
-                                                            type="text"
-                                                            id="searchField"
-                                                            placeholder="Search"
-                                                            aria-label="Search"
-                                                            aria-describedby="basic-addon2"
-                                                        />
+                                        <Nav className="flex-column">
+                                            <Nav.Item>
+                                                <Nav.Link
+                                                    href="#"
+                                                    className="nav-item nav-link d-flex align-items-center"
+                                                >
+                                                    {<HouseAddFill className="fs-3" />}&nbsp; Home
+                                                </Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link
+                                                    href="#"
+                                                    className="nav-item nav-link d-flex align-items-center"
+                                                >
+                                                    {<BookFill className="fs-3" />}&nbsp; Your Library
+                                                </Nav.Link>
+                                            </Nav.Item>
+                                            <Form onSubmit={searchHandler} className="input-group mt-3">
+                                                <InputGroup>
+                                                    <Form.Control
+                                                        type="text"
+                                                        id="searchField"
+                                                        placeholder="Search"
+                                                        aria-label="Search"
+                                                        aria-describedby="basic-addon2"
+                                                    />
 
-                                                        <Button variant="outline-secondary" type="submit">
-                                                            GO
-                                                        </Button>
-                                                    </InputGroup>
-                                                </Form>
-                                            </li>
-                                        </ul>
+                                                    <Button variant="outline-secondary" type="submit">
+                                                        GO
+                                                    </Button>
+                                                </InputGroup>
+                                            </Form>
+                                        </Nav>
                                     </div>
                                 </div>
                             </div>
