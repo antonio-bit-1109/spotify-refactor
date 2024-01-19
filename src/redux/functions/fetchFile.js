@@ -20,6 +20,7 @@ export const fetchData = (url, parametroOpzionale, options, action, lastAction) 
         }
 
         const fetchData = await fetchResponse.json();
+        console.log(fetchData);
 
         dispatch(action(fetchData));
 

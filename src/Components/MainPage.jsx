@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import MusicPlayer from "./MusicPlayer";
+import { fetchData } from "../redux/functions/fetchFile";
+import { setDataFetchUno, setDataFetchDue, setDataFetchTre } from "../redux/reducers/stateSliceReducer";
+import { useSelector, useDispatch } from "react-redux";
+
+const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
+
+const options = {
+    method: "GET",
+    headers: {
+        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+        "X-RapidAPI-Key": "9d408f0366mshab3b0fd8e5ecdf7p1b09f2jsne682a1797fa0",
+    },
+};
 
 const MainPage = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchData(url, "eminem", options, setDataFetchUno));
+        dispatch(fetchData(url, "caparezza", options, setDataFetchDue));
+        dispatch(fetchData(url, "rancore", options, setDataFetchTre));
+    }, []);
+
     return (
         <>
             <Col xs={12} md={9} className=" offset-md-3 mainPage">
