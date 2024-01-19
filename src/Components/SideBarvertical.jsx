@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Form, InputGroup, Nav, Navbar } from "react-bootstrap";
 import Logo from "../assets/logo/logo.png";
 import { BookFill, HouseAddFill } from "react-bootstrap-icons";
+import { fetchData } from "../redux/functions/fetchFile";
 
 const SideBarvertical = () => {
     const searchHandler = (event) => {
