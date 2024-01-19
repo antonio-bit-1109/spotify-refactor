@@ -88,7 +88,25 @@ const MainPage = () => {
                                                                         Canzone: {singleAlbum.title_short}
                                                                     </Card.Text>
                                                                 </Card.Body>
-                                                                <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
+                                                                {IDsongPreferite.includes(singleAlbum.id) ? (
+                                                                    <HeartFill
+                                                                        onClick={() => {
+                                                                            dispatch(
+                                                                                setRemoveSongPreferite(singleAlbum.id)
+                                                                            );
+                                                                        }}
+                                                                        className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                                    />
+                                                                ) : (
+                                                                    <Heart
+                                                                        onClick={() => {
+                                                                            dispatch(
+                                                                                setAddSongPreferite(singleAlbum.id)
+                                                                            );
+                                                                        }}
+                                                                        className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                                    />
+                                                                )}
                                                             </Card>
                                                         </Col>
                                                     ))}
@@ -119,7 +137,21 @@ const MainPage = () => {
                                                             Canzone: {singleAlbum.title_short}
                                                         </Card.Text>
                                                     </Card.Body>
-                                                    <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
+                                                    {IDsongPreferite.includes(singleAlbum.id) ? (
+                                                        <HeartFill
+                                                            onClick={() => {
+                                                                dispatch(setRemoveSongPreferite(singleAlbum.id));
+                                                            }}
+                                                            className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                        />
+                                                    ) : (
+                                                        <Heart
+                                                            onClick={() => {
+                                                                dispatch(setAddSongPreferite(singleAlbum.id));
+                                                            }}
+                                                            className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                        />
+                                                    )}
                                                 </Card>
                                             </Col>
                                         ))}
@@ -147,7 +179,21 @@ const MainPage = () => {
                                                             Canzone: {singleAlbum.title_short}
                                                         </Card.Text>
                                                     </Card.Body>
-                                                    <Heart className="position-absolute top-0 end-0 text-danger m-3 fs-3" />
+                                                    {IDsongPreferite.includes(singleAlbum.id) ? (
+                                                        <HeartFill
+                                                            onClick={() => {
+                                                                dispatch(setRemoveSongPreferite(singleAlbum.id));
+                                                            }}
+                                                            className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                        />
+                                                    ) : (
+                                                        <Heart
+                                                            onClick={() => {
+                                                                dispatch(setAddSongPreferite(singleAlbum.id));
+                                                            }}
+                                                            className="position-absolute top-0 end-0 text-danger m-3 fs-3"
+                                                        />
+                                                    )}
                                                 </Card>
                                             </Col>
                                         ))}

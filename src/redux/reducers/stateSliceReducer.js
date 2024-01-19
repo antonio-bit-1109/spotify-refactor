@@ -31,7 +31,6 @@ const MainSlice = createSlice({
         setAddSongPreferite: (state, action) => {
             state.songPreferite.push(action.payload);
         },
-
         setRemoveSongPreferite: (state, actions) => {
             state.songPreferite = state.songPreferite.filter((id) => id !== actions.payload);
         },
