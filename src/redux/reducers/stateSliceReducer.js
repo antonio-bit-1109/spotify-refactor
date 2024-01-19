@@ -7,6 +7,7 @@ const MainSlice = createSlice({
         dataFetchDue: null,
         dataFetchTre: null,
         dataFetchInput: null,
+        dataToShowOnMusicPlayer: null,
     },
 
     /* QUESTE SONO LE ACTION  ACTIONS = I MIEI SETTER DI GONI SINGOLO STATO  */
@@ -24,8 +25,13 @@ const MainSlice = createSlice({
         setDataFetchInput: (state, action) => {
             state.dataFetchInput = action.payload;
         },
+
+        setStringsToShowOnPlayer: (state, action) => {
+            state.dataToShowOnMusicPlayer = action.payload;
+        },
     },
 });
 
-export const { setDataFetchUno, setDataFetchDue, setDataFetchTre, setDataFetchInput } = MainSlice.actions;
+export const { setDataFetchUno, setDataFetchDue, setDataFetchTre, setDataFetchInput, setStringsToShowOnPlayer } =
+    MainSlice.actions;
 export default MainSlice.reducer;
