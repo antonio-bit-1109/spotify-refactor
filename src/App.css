@@ -171,3 +171,7 @@ ul {
 .mainPage img {
     width: 200px;
 }
+
+.icon {
+    width: 20px !important;
+}
