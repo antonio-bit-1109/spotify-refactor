@@ -13,7 +13,7 @@ const MainComponent = () => {
     };
 
     return (
-        <div className="bg-black">
+        <div>
             <Container fluid>
                 <Row>
                     {/* START sidebar-verticale */}
