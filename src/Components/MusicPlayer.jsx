@@ -45,12 +45,16 @@ const MusicPlayer = () => {
                                     {datiSong && (
                                         <Col className="flex-grow-1" xs={3} sm={3} md={3}>
                                             <div className="d-flex justify-content-end">
-                                                <div>
-                                                    <p className="w-100 pe-2 m-0 text-light">{datiSong.title_short}</p>
-                                                    <p className="w-100 pe-2 m-0 text-light">{datiSong.album.title}</p>
+                                                <div className="h-100 d-flex flex-column">
+                                                    <p className=" pe-2 m-0 text-light">{datiSong.title_short}</p>
+                                                    <p className=" pe-2 m-0 text-light">{datiSong.album.title}</p>
                                                 </div>
 
-                                                <img style={{ height: "90px" }} src={datiSong.artist.picture} alt="" />
+                                                <img
+                                                    style={{ height: "80px" }}
+                                                    src={datiSong.artist.picture}
+                                                    alt="img"
+                                                />
                                             </div>
                                         </Col>
                                     )}
