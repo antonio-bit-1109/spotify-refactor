@@ -5,7 +5,7 @@ const ListPreferiteSong = () => {
     const listaCanzoniPreferite = useSelector((state) => state.FetchAlMount.allSongPreferiteObj);
     console.log("listaCanzoniPreferite", listaCanzoniPreferite);
 
-    return <div>ListPreferiteSong</div>;
+    return <></>;
 };
 
 export default ListPreferiteSong;
