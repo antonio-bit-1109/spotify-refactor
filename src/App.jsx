@@ -5,6 +5,7 @@ import MainComponent from "./Components/MainComponent";
 import ListPreferiteSong from "./Components/ListPreferiteSong";
 import SideBarvertical from "./Components/SideBarvertical";
 import FormSignIn from "./Components/FormSignIn";
+import Navbar from "./Components/navBar";
 
 const App = () => {
     return (
@@ -20,7 +21,14 @@ const App = () => {
                             </>
                         }
                     />
-                    <Route path="/iscriviti" element={<FormSignIn />} />
+                    <Route
+                        path="/iscriviti"
+                        element={
+                            <>
+                                <Navbar /> <FormSignIn />
+                            </>
+                        }
+                    />
                 </Routes>
             </BrowserRouter>
         </>
