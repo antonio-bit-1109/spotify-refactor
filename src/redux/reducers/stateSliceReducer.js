@@ -9,7 +9,7 @@ const MainSlice = createSlice({
         dataFetchInput: null,
         dataToShowOnMusicPlayer: null,
         songPreferite: [] /* only ID's */,
-        allSongPreferite: [] /* all the object */,
+        allSongPreferiteObj: [] /* all the object */,
     },
 
     /* QUESTE SONO LE ACTION  ACTIONS = I MIEI SETTER DI GONI SINGOLO STATO  */
@@ -36,9 +36,13 @@ const MainSlice = createSlice({
             state.songPreferite = state.songPreferite.filter((id) => id !== action.payload);
         },
 
-        /*  setAllSongPreferite: (state, actions) => {
-            state.songPreferite += action.payload
-        }, */
+        setAllSongPreferiteObj: (state, action) => {
+            state.allSongPreferiteObj.push(action.payload);
+        },
+
+        setRemoveSongPreferiteObject: (state, action) => {
+            state.allSongPreferiteObj = state.allSongPreferiteObj.filter((object) => object.id !== action.payload);
+        },
     },
 });
 
@@ -50,5 +54,7 @@ export const {
     setStringsToShowOnPlayer,
     setAddSongPreferite,
     setRemoveSongPreferite,
+    setAllSongPreferiteObj,
+    setRemoveSongPreferiteObject,
 } = MainSlice.actions;
 export default MainSlice.reducer;

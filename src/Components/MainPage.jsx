@@ -9,6 +9,8 @@ import {
     setStringsToShowOnPlayer,
     setAddSongPreferite,
     setRemoveSongPreferite,
+    setAllSongPreferiteObj,
+    setRemoveSongPreferiteObject,
 } from "../redux/reducers/stateSliceReducer";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
@@ -94,6 +96,11 @@ const MainPage = () => {
                                                                             dispatch(
                                                                                 setRemoveSongPreferite(singleAlbum.id)
                                                                             );
+                                                                            dispatch(
+                                                                                setRemoveSongPreferiteObject(
+                                                                                    singleAlbum.id
+                                                                                )
+                                                                            );
                                                                         }}
                                                                         className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                                     />
@@ -102,6 +109,9 @@ const MainPage = () => {
                                                                         onClick={() => {
                                                                             dispatch(
                                                                                 setAddSongPreferite(singleAlbum.id)
+                                                                            );
+                                                                            dispatch(
+                                                                                setAllSongPreferiteObj(singleAlbum)
                                                                             );
                                                                         }}
                                                                         className="position-absolute top-0 end-0 text-danger m-3 fs-3"
@@ -141,6 +151,7 @@ const MainPage = () => {
                                                         <HeartFill
                                                             onClick={() => {
                                                                 dispatch(setRemoveSongPreferite(singleAlbum.id));
+                                                                dispatch(setRemoveSongPreferiteObject(singleAlbum.id));
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
@@ -148,6 +159,7 @@ const MainPage = () => {
                                                         <Heart
                                                             onClick={() => {
                                                                 dispatch(setAddSongPreferite(singleAlbum.id));
+                                                                dispatch(setAllSongPreferiteObj(singleAlbum));
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
@@ -183,6 +195,7 @@ const MainPage = () => {
                                                         <HeartFill
                                                             onClick={() => {
                                                                 dispatch(setRemoveSongPreferite(singleAlbum.id));
+                                                                dispatch(setRemoveSongPreferiteObject(singleAlbum.id));
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
@@ -190,6 +203,7 @@ const MainPage = () => {
                                                         <Heart
                                                             onClick={() => {
                                                                 dispatch(setAddSongPreferite(singleAlbum.id));
+                                                                dispatch(setAllSongPreferiteObj(singleAlbum));
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
@@ -226,6 +240,7 @@ const MainPage = () => {
                                                         <HeartFill
                                                             onClick={() => {
                                                                 dispatch(setRemoveSongPreferite(singleAlbum.id));
+                                                                dispatch(setRemoveSongPreferiteObject(singleAlbum.id));
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
@@ -233,6 +248,7 @@ const MainPage = () => {
                                                         <Heart
                                                             onClick={() => {
                                                                 dispatch(setAddSongPreferite(singleAlbum.id));
+                                                                dispatch(setAllSongPreferiteObj(singleAlbum));
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
