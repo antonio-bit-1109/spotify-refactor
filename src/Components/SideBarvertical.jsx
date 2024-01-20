@@ -51,14 +51,17 @@ const SideBarvertical = () => {
                             <div className="navbar-nav">
                                 <Nav className="flex-column">
                                     <Nav.Item>
-                                        <Nav.Link href="#" className="nav-item nav-link d-flex align-items-center">
+                                        <Link to={"/"} className="nav-item nav-link d-flex align-items-center">
                                             {<HouseAddFill className="fs-3" />}&nbsp; Home
-                                        </Nav.Link>
+                                        </Link>
                                     </Nav.Item>
                                     <Nav.Item>
-                                        <Nav.Link href="#" className="nav-item nav-link d-flex align-items-center">
+                                        <Link
+                                            to={"/ListaPreferiti"}
+                                            className="nav-item nav-link d-flex align-items-center"
+                                        >
                                             {<BookFill className="fs-3" />}&nbsp; Your Library
-                                        </Nav.Link>
+                                        </Link>
                                     </Nav.Item>
                                     <Form onSubmit={searchHandler} className="input-group mt-3">
                                         <InputGroup>
