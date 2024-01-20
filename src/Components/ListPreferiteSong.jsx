@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { Link } from "react-bootstrap-icons";
-import { UseSelector, useDispatch, useSelector } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
+import { setSingolaSongPreferita } from "../redux/reducers/stateSliceReducer";
 import { NavLink } from "react-router-dom";
 
 const convertToDuration = (seconds) => {
@@ -15,6 +16,7 @@ const convertToDuration = (seconds) => {
 };
 
 const ListPreferiteSong = () => {
+    const dispatch = useDispatch();
     const listaCanzoniPreferite = useSelector((state) => state.FetchAlMount.allSongPreferiteObj);
     console.log("listaCanzoniPreferite", listaCanzoniPreferite);
 
@@ -37,14 +39,21 @@ const ListPreferiteSong = () => {
                             <div className="mt-5">
                                 {listaCanzoniPreferite.map((song) => (
                                     <Row className="my-2" key={song.id}>
-                                        <Col className="border p-1 MouseCheEntra">
-                                            <div className="d-flex text-light gap-4 align-items-end">
-                                                <img src={song.album.cover_small} alt="immagine album artista " />
-                                                <h4>{song.title}</h4>
-                                                <h6>{song.album.title}</h6>
-                                                <h6>{convertToDuration(song.duration)}</h6>
-                                            </div>
-                                        </Col>
+                                        <NavLink to={"/singolaSongPreferita"}>
+                                            <Col
+                                                onClick={() => {
+                                                    dispatch(setSingolaSongPreferita(song));
+                                                }}
+                                                className="border p-1 MouseCheEntra"
+                                            >
+                                                <div className="d-flex text-light gap-4 align-items-end">
+                                                    <img src={song.album.cover_small} alt="immagine album artista " />
+                                                    <h4>{song.title}</h4>
+                                                    <h6>{song.album.title}</h6>
+                                                    <h6>{convertToDuration(song.duration)}</h6>
+                                                </div>
+                                            </Col>{" "}
+                                        </NavLink>
                                     </Row>
                                 ))}
                             </div>

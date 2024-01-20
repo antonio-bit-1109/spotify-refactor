@@ -6,6 +6,7 @@ import ListPreferiteSong from "./Components/ListPreferiteSong";
 import SideBarvertical from "./Components/SideBarvertical";
 import FormSignIn from "./Components/FormSignIn";
 import Navbar from "./Components/navBar";
+import SingleSong from "./Components/SingleSong";
 
 const App = () => {
     return (
@@ -29,6 +30,7 @@ const App = () => {
                             </>
                         }
                     />
+                    <Route path="/singolaSongPreferita" element={<SingleSong />} />
                 </Routes>
             </BrowserRouter>
         </>
