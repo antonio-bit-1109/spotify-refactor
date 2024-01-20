@@ -37,16 +37,12 @@ const ListPreferiteSong = () => {
                             <div className="mt-5">
                                 {listaCanzoniPreferite.map((song) => (
                                     <Row className="my-2" key={song.id}>
-                                        <Col className="border p-1">
+                                        <Col className="border p-1 MouseCheEntra">
                                             <div className="d-flex text-light gap-4 align-items-end">
                                                 <img src={song.album.cover_small} alt="immagine album artista " />
                                                 <h4>{song.title}</h4>
                                                 <h6>{song.album.title}</h6>
                                                 <h6>{convertToDuration(song.duration)}</h6>
-                                                {/*  <h5>{song.}</h5>
-                                                <h5>{song.}</h5>
-                                                <h5>{song.}</h5>
-                                                <h5>{song.}</h5> */}
                                             </div>
                                         </Col>
                                     </Row>

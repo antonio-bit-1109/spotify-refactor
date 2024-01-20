@@ -179,3 +179,12 @@ ul {
 .no-underline {
     text-decoration: none;
 }
+
+.MouseCheEntra {
+    background-color: transparent;
+}
+
+.MouseCheEntra:hover {
+    background-color: #385a8a;
+    cursor: pointer;
+}
