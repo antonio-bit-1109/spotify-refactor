@@ -5,7 +5,7 @@ import { BookFill, HouseAddFill } from "react-bootstrap-icons";
 import { fetchData } from "../redux/functions/fetchFile";
 import { useSelector, useDispatch } from "react-redux";
 import { setDataFetchInput } from "../redux/reducers/stateSliceReducer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 

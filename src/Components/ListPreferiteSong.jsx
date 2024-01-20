@@ -20,14 +20,24 @@ const ListPreferiteSong = () => {
 
     return (
         <>
+            {" "}
+            <Container>
+                <Row className="justify-content-end">
+                    <Col xs={12}>
+                        <div className="text-light d-flex align-items-center flex-column justify-content-end my-4">
+                            <h1 className="display-3 ms-auto">Le tua lista delle canzoni preferite :</h1>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
             {listaCanzoniPreferite.length > 0 ? (
                 <Container>
                     <Row className="justify-content-end">
                         <Col xs={12} sm={12} md={10} lg={8} xl={10} xxl={10}>
                             <div className="mt-5">
                                 {listaCanzoniPreferite.map((song) => (
-                                    <Row key={song.id}>
-                                        <Col className="border p-2">
+                                    <Row className="my-2" key={song.id}>
+                                        <Col className="border p-1">
                                             <div className="d-flex text-light gap-4 align-items-end">
                                                 <img src={song.album.cover_small} alt="immagine album artista " />
                                                 <h4>{song.title}</h4>
