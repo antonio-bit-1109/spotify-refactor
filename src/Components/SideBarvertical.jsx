@@ -85,9 +85,11 @@ const SideBarvertical = () => {
                         </div>
                     </div>
                     <div className="nav-btn">
-                        <Button className="btn signup-btn" variant="primary">
-                            Sign Up
-                        </Button>
+                        <Link to={"/iscriviti"}>
+                            <Button className="btn signup-btn" variant="primary">
+                                Sign In
+                            </Button>
+                        </Link>
                         <Button className="btn login-btn" variant="success">
                             Login
                         </Button>

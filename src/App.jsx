@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainComponent from "./Components/MainComponent";
 import ListPreferiteSong from "./Components/ListPreferiteSong";
 import SideBarvertical from "./Components/SideBarvertical";
+import FormSignIn from "./Components/FormSignIn";
 
 const App = () => {
     return (
@@ -19,6 +20,7 @@ const App = () => {
                             </>
                         }
                     />
+                    <Route path="/iscriviti" element={<FormSignIn />} />
                 </Routes>
             </BrowserRouter>
         </>
