@@ -23,15 +23,17 @@ const ListPreferiteSong = () => {
     return (
         <>
             {" "}
-            <Container>
-                <Row className="justify-content-end">
-                    <Col xs={12}>
-                        <div className="text-light d-flex align-items-center flex-column justify-content-end my-4">
-                            <h1 className="display-3 ms-auto">Le tua lista delle canzoni preferite :</h1>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+            {listaCanzoniPreferite.length > 0 && (
+                <Container>
+                    <Row className="justify-content-end">
+                        <Col xs={12}>
+                            <div className="text-light d-flex align-items-center flex-column justify-content-end my-4">
+                                <h1 className="display-3 ms-auto">Le tua lista delle canzoni preferite :</h1>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            )}
             {listaCanzoniPreferite.length > 0 ? (
                 <Container>
                     <Row className="justify-content-end">
@@ -39,7 +41,7 @@ const ListPreferiteSong = () => {
                             <div className="mt-5">
                                 {listaCanzoniPreferite.map((song) => (
                                     <Row className="my-2" key={song.id}>
-                                        <NavLink to={"/singolaSongPreferita"}>
+                                        <NavLink className="no-underline" to={"/singolaSongPreferita"}>
                                             <Col
                                                 onClick={() => {
                                                     dispatch(setSingolaSongPreferita(song));
@@ -69,7 +71,7 @@ const ListPreferiteSong = () => {
                                 className="text-light d-flex align-items-center flex-column justify-content-end"
                             >
                                 {" "}
-                                <h2>Non hai salvato nessuna canzone nei preferiti!</h2>
+                                <h2 className="display-6">Non hai salvato nessuna canzone nei preferiti!</h2>
                                 <div>
                                     <NavLink to={"/"}>
                                         <Button className="mt-3">Torna alla Home</Button>
