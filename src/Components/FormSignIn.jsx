@@ -6,8 +6,11 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
+import { useLocation } from "react-router-dom";
 
 const FormSignIn = () => {
+    const location = useLocation();
+    console.log("location", location);
     const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {

@@ -15,6 +15,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import { Heart, HeartFill } from "react-bootstrap-icons";
+import { useLocation } from "react-router-dom";
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
@@ -27,6 +28,7 @@ const options = {
 };
 
 const MainPage = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const datiPrimaFetch = useSelector((state) => state.FetchAlMount.dataFetchUno);
     const datiSecondaFetch = useSelector((state) => state.FetchAlMount.dataFetchDue);
