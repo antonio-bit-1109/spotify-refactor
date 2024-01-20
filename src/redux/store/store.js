@@ -19,8 +19,9 @@ const persistConfig = {
     storage: storage,
     transforms: [
         encryptTransform({
-            secretKey: "sono_una_chiave_segreta_123", // crea il tuo file .env.local in cui creare la chiave REACT_APP_PERSIST_KEY col valore di una stringa complessa che
+            secretKey: process.env.REACT_APP_PERSIST_KEY, // crea il tuo file .env.local in cui creare la chiave REACT_APP_PERSIST_KEY col valore di una stringa complessa che
             // verrà usata come chiave di cripatzione dello store salvato nel localStorage del browser
+            /* usa process.env.VARIABILE per richiamare in questo file la chiave, il file .env.local è presente nel git ignore e non viene caricat su gitHUB  */
         }),
     ],
     //  QUAL'ORA NON VOLESSI SALVARE UN REDUCER NEL LOCAL STORAGE DEL BROWSER USA LA BLACKLIST
