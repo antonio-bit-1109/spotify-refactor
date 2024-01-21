@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import MusicPlayer from "./MusicPlayer";
 import { fetchData } from "../redux/functions/fetchFile";
@@ -15,6 +15,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import { Heart, HeartFill } from "react-bootstrap-icons";
+import Alert from "react-bootstrap/Alert";
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
@@ -33,6 +34,7 @@ const MainPage = () => {
     const datiterzaFetch = useSelector((state) => state.FetchAlMount.dataFetchTre);
     const datiFetchInput = useSelector((state) => state.FetchAlMount.dataFetchInput);
     const IDsongPreferite = useSelector((state) => state.FetchAlMount.songPreferite);
+    const [alertIsShowing, setAlertIsShowing] = useState(false);
 
     console.log("DATIFETCH", datiPrimaFetch, datiSecondaFetch, datiterzaFetch, datiFetchInput);
     console.log("IDsongPreferite", IDsongPreferite);
@@ -42,6 +44,14 @@ const MainPage = () => {
         dispatch(fetchData(url, "caparezza", options, setDataFetchDue));
         dispatch(fetchData(url, "hailtotheThief", options, setDataFetchTre));
     }, []);
+
+    useEffect(() => {
+        if (alertIsShowing) {
+            setTimeout(() => {
+                setAlertIsShowing(false);
+            }, 1000);
+        }
+    }, [alertIsShowing]);
 
     return (
         <>
@@ -60,6 +70,18 @@ const MainPage = () => {
                                     <a href="#">DISCOVER</a>
                                 </Col>
                             </Row>
+                            {alertIsShowing && (
+                                <Row className="sticky-top">
+                                    <Col xs={10}>
+                                        <div className="mt-4 d-flex justify-content-center">
+                                            <Alert variant="success fs-5">
+                                                Hai Aggiunto una canzone alla Playlist!
+                                            </Alert>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            )}
+
                             <Row>
                                 <Col xs={10}>
                                     <div id="searchResults">
@@ -114,6 +136,7 @@ const MainPage = () => {
                                                                             dispatch(
                                                                                 setAllSongPreferiteObj(singleAlbum)
                                                                             );
+                                                                            setAlertIsShowing(true);
                                                                         }}
                                                                         className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                                     />
@@ -161,6 +184,7 @@ const MainPage = () => {
                                                             onClick={() => {
                                                                 dispatch(setAddSongPreferite(singleAlbum.id));
                                                                 dispatch(setAllSongPreferiteObj(singleAlbum));
+                                                                setAlertIsShowing(true);
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
@@ -205,6 +229,7 @@ const MainPage = () => {
                                                             onClick={() => {
                                                                 dispatch(setAddSongPreferite(singleAlbum.id));
                                                                 dispatch(setAllSongPreferiteObj(singleAlbum));
+                                                                setAlertIsShowing(true);
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
@@ -250,6 +275,7 @@ const MainPage = () => {
                                                             onClick={() => {
                                                                 dispatch(setAddSongPreferite(singleAlbum.id));
                                                                 dispatch(setAllSongPreferiteObj(singleAlbum));
+                                                                setAlertIsShowing(true);
                                                             }}
                                                             className="position-absolute top-0 end-0 text-danger m-3 fs-3"
                                                         />
