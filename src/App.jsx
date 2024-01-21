@@ -15,7 +15,7 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LogoPlaceHolder />} />
-                    {/* <Route path="/" element={<MainComponent />} /> */}
+                    <Route path="/home" element={<MainComponent />} />
                     <Route
                         path="/ListaPreferiti"
                         element={

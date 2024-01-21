@@ -73,7 +73,7 @@ const ListPreferiteSong = () => {
                                 {" "}
                                 <h2 className="display-6">Non hai salvato nessuna canzone nei preferiti!</h2>
                                 <div>
-                                    <NavLink to={"/"}>
+                                    <NavLink to={"/home"}>
                                         <Button className="mt-3">Torna alla Home</Button>
                                     </NavLink>
                                 </div>

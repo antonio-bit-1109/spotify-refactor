@@ -51,7 +51,7 @@ const SideBarvertical = () => {
                             <div className="navbar-nav">
                                 <Nav className="flex-column">
                                     <Nav.Item>
-                                        <Link to={"/"} className="nav-item nav-link d-flex align-items-center">
+                                        <Link to={"/home"} className="nav-item nav-link d-flex align-items-center">
                                             {<HouseAddFill className="fs-3" />}&nbsp; Home
                                         </Link>
                                     </Nav.Item>
