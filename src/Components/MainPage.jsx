@@ -33,6 +33,7 @@ const MainPage = () => {
     const datiterzaFetch = useSelector((state) => state.FetchAlMount.dataFetchTre);
     const datiFetchInput = useSelector((state) => state.FetchAlMount.dataFetchInput);
     const IDsongPreferite = useSelector((state) => state.FetchAlMount.songPreferite);
+
     console.log("DATIFETCH", datiPrimaFetch, datiSecondaFetch, datiterzaFetch, datiFetchInput);
     console.log("IDsongPreferite", IDsongPreferite);
 
