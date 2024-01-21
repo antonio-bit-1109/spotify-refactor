@@ -209,11 +209,20 @@ ul {
 }
 
 .scale-out-center-exit {
-    animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: scale-out-center 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 @keyframes scale-out-center {
     0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    60% {
         transform: scale(1);
         opacity: 1;
     }
