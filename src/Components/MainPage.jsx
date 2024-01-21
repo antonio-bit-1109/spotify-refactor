@@ -153,7 +153,7 @@ const MainPage = () => {
                             </Row>
                             <Row>
                                 <Col xs={10} id="rock">
-                                    <h2>Rock music</h2>
+                                    <h2 className="text-light">Rock music</h2>
                                     <Row xs={1} sm={2} lg={3} xl={4} className="imgLinks py-3" id="rockSection">
                                         {datiPrimaFetch.data.slice(0, 4).map((singleAlbum) => (
                                             <Col key={singleAlbum.id}>
