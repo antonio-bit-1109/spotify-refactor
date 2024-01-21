@@ -7,13 +7,15 @@ import SideBarvertical from "./Components/SideBarvertical";
 import FormSignIn from "./Components/FormSignIn";
 import Navbar from "./Components/navBar";
 import SingleSong from "./Components/SingleSong";
+import LogoPlaceHolder from "./Components/LogoPlaceHolder";
 
 const App = () => {
     return (
         <>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<MainComponent />} />
+                    <Route path="/" element={<LogoPlaceHolder />} />
+                    {/* <Route path="/" element={<MainComponent />} /> */}
                     <Route
                         path="/ListaPreferiti"
                         element={
