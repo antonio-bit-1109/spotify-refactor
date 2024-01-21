@@ -1,5 +1,3 @@
-/* import { setGenericBooleanOff } from "../reducers/firstFetch"; */
-
 /* FETCH MODALE RIUTILIZZABILE   */
 export const fetchData = (url, parametroOpzionale, options, action, lastAction) => async (dispatch) => {
     try {
