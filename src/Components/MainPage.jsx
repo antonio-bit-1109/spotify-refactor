@@ -40,7 +40,7 @@ const MainPage = () => {
     useEffect(() => {
         dispatch(fetchData(url, "eminem", options, setDataFetchUno));
         dispatch(fetchData(url, "caparezza", options, setDataFetchDue));
-        dispatch(fetchData(url, "radiohead", options, setDataFetchTre));
+        dispatch(fetchData(url, "hailtotheThief", options, setDataFetchTre));
     }, []);
 
     return (
