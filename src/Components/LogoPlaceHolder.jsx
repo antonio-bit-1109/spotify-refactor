@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo/logo.png";
 import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
 
 const LogoPlaceHolder = () => {
     const navigate = useNavigate();
