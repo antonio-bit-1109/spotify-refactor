@@ -16,6 +16,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Card from "react-bootstrap/Card";
 import { Heart, HeartFill } from "react-bootstrap-icons";
 import Alert from "react-bootstrap/Alert";
+import { Link } from "react-router-dom";
 
 const url = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
@@ -63,17 +64,17 @@ const MainPage = () => {
                         <div>
                             <Row>
                                 <Col xs={9} lg={11} className=" mainLinks d-none d-md-flex">
-                                    <a href="#">TRENDING</a>
-                                    <a href="#">PODCAST</a>
-                                    <a href="#">MOODS AND GENRES</a>
-                                    <a href="#">NEW RELEASES</a>
-                                    <a href="#">DISCOVER</a>
+                                    <Link href="#">TRENDING</Link>
+                                    <Link href="#">PODCAST</Link>
+                                    <Link href="#">MOODS AND GENRES</Link>
+                                    <Link href="#">NEW RELEASES</Link>
+                                    <Link href="#">DISCOVER</Link>
                                 </Col>
                             </Row>
                             {alertIsShowing && (
                                 <Row className="sticky-top">
                                     <Col xs={10}>
-                                        <div className="mt-4 d-flex justify-content-center">
+                                        <div className="mt-5 d-flex justify-content-center">
                                             <Alert variant="success fs-5">
                                                 Hai Aggiunto una canzone alla Playlist!
                                             </Alert>
