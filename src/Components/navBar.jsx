@@ -15,10 +15,10 @@ const navBar = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <NavLink className="no-underline text-light mx-1" to={"/home"}>
+                            <NavLink className="no-underline mx-1 enance" to={"/home"}>
                                 Home
                             </NavLink>
-                            <NavLink className="no-underline text-light mx-1" to={"/ListaPreferiti"}>
+                            <NavLink className="no-underline mx-1 enance" to={"/ListaPreferiti"}>
                                 Lista Preferiti
                             </NavLink>
 

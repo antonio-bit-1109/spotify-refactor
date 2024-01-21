@@ -231,3 +231,11 @@ ul {
         opacity: 1;
     }
 }
+
+.enance {
+    color: lightslategray;
+}
+
+.enance:hover {
+    color: whitesmoke;
+}
